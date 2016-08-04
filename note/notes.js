@@ -9,11 +9,21 @@ var Note = React.createClass({
         );
     }
 });
-
+var NoteColor = React.createClass({
+    render: function () {
+        return (
+            <div className="colorB">
+                <input type="radio" name="note-color"/>
+                <input type="radio" name="note-color"/>
+                <input type="radio" name="note-color"/>
+            </div>
+        )
+    }
+});
 var NoteEditor = React.createClass({
     getInitialState: function () {
         return {
-            text: ''
+            text: '',
         };
     },
 
@@ -42,6 +52,7 @@ var NoteEditor = React.createClass({
                     value={this.state.text}
                     onChange={this.handleTextChange}
                 />
+                <NoteColor/>
                 <button className="add-button" onClick={this.handleNoteAdd}>Add</button>
             </div>
         );
@@ -49,6 +60,7 @@ var NoteEditor = React.createClass({
 });
 
 
+<<<<<<< HEAD
 var NoteColor = React.createClass({
     getInitialState: function () {
         return {
@@ -76,9 +88,12 @@ var NoteColor = React.createClass({
 
 
 
+=======
+>>>>>>> 191aced1d9587cf878a7a3031e69e05553287df2
 var NotesGrid = React.createClass({
     componentDidMount: function () {
         var grid = this.refs.grid;
+        console.log(grid)
         this.msnry = new Masonry(grid, {
             itemSelector: '.note',
             columnWidth: 200,
@@ -201,5 +216,5 @@ ReactDOM.render(
 
  Демонтаж компонента(unmount)
 
-componentWillUnmount - викликається перед видалення компонента з DOM(очищення подій, ссилок, clearInterval)
+ componentWillUnmount - викликається перед видалення компонента з DOM(очищення подій, ссилок, clearInterval)
  */
