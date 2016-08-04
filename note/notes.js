@@ -43,11 +43,38 @@ var NoteEditor = React.createClass({
                     onChange={this.handleTextChange}
                 />
                 <button className="add-button" onClick={this.handleNoteAdd}>Add</button>
-                <input type="color"/>
             </div>
         );
     }
 });
+
+
+var NoteColor = React.createClass({
+    getInitialState: function () {
+        return {
+            text: ''
+        };
+    },
+
+    render: function () {
+        return (
+            <div className="note-editor">
+                <input type="radio" name="featured" value="red" checked/>
+                <input type="radio"  name="featured"/>
+                <input type="radio" name="featured"/>
+            </div>
+        );
+    }
+});
+
+
+
+
+
+
+
+
+
 
 var NotesGrid = React.createClass({
     componentDidMount: function () {
@@ -126,7 +153,9 @@ var NotesApp = React.createClass({
             <div className="notes-app">
                 <h2 className="app-header">NotesApp</h2>
                 <NoteEditor onNoteAdd={this.handleNoteAdd}/>
+                <NoteColor/>
                 <NotesGrid notes={this.state.notes} onNoteDelete={this.handleNoteDelete}/>
+
             </div>
         );
     },
@@ -151,7 +180,7 @@ ReactDOM.render(
 
  render -
 
- componentDidmount - в момент виклику компонент вже є в DOM (onchange, onclick, брау        зерні події)
+ componentDidmount - в момент виклику компонент вже є в DOM (onchange, onclick, браузерні події)
 
  */
 
