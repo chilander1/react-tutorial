@@ -44,8 +44,10 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	const name = "Andrew";
-	console.log(`Hi! ${ name }`);
+	"use strict";
+
+	var name = "Andrew";
+	console.log("Hi! " + name);
 
 /***/ }
 /******/ ]);
