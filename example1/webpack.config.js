@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-
+var rerere;
 module.exports = {
     entry: "./src/main.js",
     output: {
