@@ -11,67 +11,39 @@
 
 <script type="text/babel">
 
-    var SearchResult = React.createClass({
-        getInitialState: function () {
-            return {
-                site: '',
-                address: ''
-            };
+    var MyContainer = React.createClass({
+        getInitialState: function() {
+            return { checked: false, totalChecked: 0 };
         },
-        onSiteChanged: function (e) {
-            this.setState({
-                site: e.currentTarget.value
-            });
+        onChildChanged: function(newState) {
+            // if newState is true, it means a checkbox has been checked.
+            var newTotal = this.state.totalChecked + (newState ? 1 : -1);
+            this.setState({ totalChecked: newTotal });
         },
-
-        onAddressChanged: function (e) {
-            this.setState({
-                address: e.currentTarget.value
-            });
-        },
-
-        render: function(){
-            var resultRows = this.props.data.map(function(result){
-                return (
-                        <tbody>
-                        <tr>
-                            <td><input type="radio" name="site_name"
-                                       value={result.SITE_NAME}
-                                       checked={this.state.site === result.SITE_NAME}
-                                       onChange={this.onSiteChanged} />{result.SITE_NAME}</td>
-                            <td><input type="radio" name="address"
-                                       value={result.ADDRESS}
-                                       checked={this.state.address === result.ADDRESS}
-                                       onChange={this.onAddressChanged} />{result.ADDRESS}</td>
-                        </tr>
-                        </tbody>
-                );
-            }, this);
-            return (
-                    <table className="table">
-                        <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Address</th>
-                        </tr>
-                        </thead>
-                        {resultRows}
-
-                    </table>
-            );
+        render: function() {
+            return  <div>
+                <div>How many are checked ? {this.state.totalChecked}</div>
+                <ToggleButton text="Toggle me" initialChecked={this.state.checked} callbackParent={this.onChildChanged} />
+                <ToggleButton text="Toggle me too" initialChecked={this.state.checked} callbackParent={this.onChildChanged} />
+                <ToggleButton text="And me" initialChecked={this.state.checked} callbackParent={this.onChildChanged} />
+            </div>;
         }
     });
 
-    var App = React.createClass({
-        render: function(){
-            return <div><SearchResult data={[
-                {SITE_NAME: 'google.com', ADDRESS: 'Mountain View, CA'},
-                {SITE_NAME: 'example.com', ADDRESS: 'Example Place, CA'}
-            ]}/></div>
+    var ToggleButton = React.createClass({
+        getInitialState: function() {
+            return { checked: this.props.initialChecked };
+        },
+        onTextChanged: function() {
+            var newState = !this.state.checked;
+            this.setState({ checked: newState });
+            this.props.callbackParent(newState); // hey parent, I've changed!
+        },
+        render: function() {
+            return <label>{this.props.text}: <input type="checkbox" checked={this.state.checked} onChange={this.onTextChanged}/></label>;
         }
     });
-
-    React.render(<App />, document.body);
+    React.render(<MyContainer />, document.body);
 </script>
 </body>
 </html>
