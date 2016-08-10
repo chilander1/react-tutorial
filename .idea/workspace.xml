@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="3bcd22de-fae6-42d8-b8df-68b8c9ac41b8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/note/notes.js" afterPath="$PROJECT_DIR$/note/notes.js" />
+    </list>
+=======
     <list default="true" id="a3aeabcd-97cb-4d0e-8e42-3996f67b4a4e" name="Default" comment="" />
+>>>>>>> 191aced1d9587cf878a7a3031e69e05553287df2
     <ignored path="tutorials.loc.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -42,11 +49,40 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="notes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/note/notes.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="8" column="10" selection-start-line="0" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="01.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/02-deep-in-components/homework/01.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="272">
+                <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/note/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+=======
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+>>>>>>> 191aced1d9587cf878a7a3031e69e05553287df2
+>>>>>>> 5f5c680ccfdb5bd39de7cd70014919a425b91e15
               <folding />
             </state>
           </provider>
@@ -55,8 +91,18 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/note/style.css">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="85">
               <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+=======
+<<<<<<< HEAD
+            <state relative-caret-position="306">
+              <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+=======
+            <state relative-caret-position="255">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+>>>>>>> 191aced1d9587cf878a7a3031e69e05553287df2
+>>>>>>> 5f5c680ccfdb5bd39de7cd70014919a425b91e15
               <folding />
             </state>
           </provider>
@@ -207,18 +253,38 @@
       <created>1470074182736</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
+      <updated>1470140108721</updated>
+      <workItem from="1470140110136" duration="4569000" />
+      <workItem from="1470227001723" duration="1541000" />
+      <workItem from="1470229775540" duration="1426000" />
+      <workItem from="1470231486639" duration="5124000" />
+=======
       <updated>1470074182736</updated>
       <workItem from="1470074185234" duration="655000" />
       <workItem from="1470074956520" duration="254000" />
       <workItem from="1470075318375" duration="1160000" />
+<<<<<<< HEAD
       <workItem from="1470244672026" duration="7571000" />
       <workItem from="1470334655145" duration="1702000" />
       <workItem from="1470685415522" duration="739000" />
+=======
+      <workItem from="1470244672026" duration="6235000" />
+>>>>>>> 191aced1d9587cf878a7a3031e69e05553287df2
+>>>>>>> 5f5c680ccfdb5bd39de7cd70014919a425b91e15
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="12081000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="12660000" />
+=======
+    <option name="totallyTimeSpent" value="8304000" />
+>>>>>>> 191aced1d9587cf878a7a3031e69e05553287df2
+>>>>>>> 5f5c680ccfdb5bd39de7cd70014919a425b91e15
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
@@ -256,7 +322,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -307,7 +375,20 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/note/index.html">
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/canva/index.html">
+=======
+    <entry file="file://$PROJECT_DIR$/note/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02-deep-in-components/homework/01.md">
+>>>>>>> 191aced1d9587cf878a7a3031e69e05553287df2
+>>>>>>> 5f5c680ccfdb5bd39de7cd70014919a425b91e15
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
@@ -323,18 +404,62 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/02-deep-in-components/images/007.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/note/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/note/notes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+>>>>>>> 191aced1d9587cf878a7a3031e69e05553287df2
+>>>>>>> 5f5c680ccfdb5bd39de7cd70014919a425b91e15
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/note/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/02-deep-in-components/homework/01.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="272">
+            <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/note/notes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+=======
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+>>>>>>> 191aced1d9587cf878a7a3031e69e05553287df2
+>>>>>>> 5f5c680ccfdb5bd39de7cd70014919a425b91e15
           <folding />
         </state>
       </provider>

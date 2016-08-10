@@ -9,7 +9,54 @@ var Note = React.createClass({
         );
     }
 });
-var color1;
+
+var NoteEditor = React.createClass({
+    getInitialState: function () {
+        return {
+            text: '',
+            selectedOption: '#FF8A80'
+        };
+    },
+
+    handleTextChange: function (event) {
+        this.setState({text: event.target.value});
+    },
+    onChildChanged: function(newState) {
+        // if newState is true, it means a checkbox has been checked.
+        this.setState({ selectedOption: newState });
+
+        console.log(newState)
+    },
+    handleNoteAdd: function () {
+        var newNote = {
+            text: this.state.text,
+            color: this.state.selectedOption,
+            id: Date.now()
+        };
+        console.log(NoteColor.this)
+
+
+        this.props.onNoteAdd(newNote);
+        this.setState({text: ''});
+    },
+
+    render: function () {
+        return (
+            <div className="note-editor">
+                <textarea
+                    placeholder="Enter your note here..."
+                    rows={5}
+                    className="textarea"
+                    value={this.state.text}
+                    onChange={this.handleTextChange}
+                />
+                <NoteColor callbackParent={this.onChildChanged} />
+                <button className="add-button" onClick={this.handleNoteAdd} callbackParent={this.onChildChanged} >Add</button>
+            </div>
+        );
+    }
+});
+
 var NoteColor = React.createClass({
     getInitialState: function () {
         return {
@@ -17,10 +64,11 @@ var NoteColor = React.createClass({
         };
     },
     handleOptionChange: function (changeEvent) {
+        var newState = changeEvent.target.value;
         this.setState({
-            selectedOption: changeEvent.target.value,
+            selectedOption: newState,
         });
-        color1 = changeEvent.target.value;
+        this.props.callbackParent(newState);
     },
 
     render: function (i, props) {
@@ -44,47 +92,6 @@ var NoteColor = React.createClass({
         )
     }
 });
-var NoteEditor = React.createClass({
-    getInitialState: function () {
-        return {
-            text: '',
-        };
-    },
-
-    handleTextChange: function (event) {
-        this.setState({text: event.target.value});
-    },
-
-    handleNoteAdd: function () {
-        var newNote = {
-            text: this.state.text,
-            color: color1,
-            id: Date.now()
-        };
-        console.log(NoteColor.this)
-
-
-        this.props.onNoteAdd(newNote);
-        this.setState({text: ''});
-    },
-
-    render: function () {
-        return (
-            <div className="note-editor">
-                <textarea
-                    placeholder="Enter your note here..."
-                    rows={5}
-                    className="textarea"
-                    value={this.state.text}
-                    onChange={this.handleTextChange}
-                />
-                <NoteColor/>
-                <button className="add-button" onClick={this.handleNoteAdd}>Add</button>
-            </div>
-        );
-    }
-});
-
 var NotesGrid = React.createClass({
     componentDidMount: function () {
         var grid = this.refs.grid;
@@ -116,6 +123,7 @@ var NotesGrid = React.createClass({
                                 onDelete={onNoteDelete.bind(null, note)}
                                 color={note.color}>
                                 {note.text}
+
                             </Note>
                         );
                     })

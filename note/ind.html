@@ -11,6 +11,7 @@
 
 <script type="text/babel">
 
+<<<<<<< HEAD
     var SearchResult = React.createClass({
         getInitialState: function () {
             return {
@@ -72,6 +73,41 @@
     });
 
     React.render(<App />, document.body);
+=======
+    var MyContainer = React.createClass({
+        getInitialState: function() {
+            return { checked: false, totalChecked: 0 };
+        },
+        onChildChanged: function(newState) {
+            // if newState is true, it means a checkbox has been checked.
+            var newTotal = this.state.totalChecked + (newState ? 1 : -1);
+            this.setState({ totalChecked: newTotal });
+        },
+        render: function() {
+            return  <div>
+                <div>How many are checked ? {this.state.totalChecked}</div>
+                <ToggleButton text="Toggle me" initialChecked={this.state.checked} callbackParent={this.onChildChanged} />
+                <ToggleButton text="Toggle me too" initialChecked={this.state.checked} callbackParent={this.onChildChanged} />
+                <ToggleButton text="And me" initialChecked={this.state.checked} callbackParent={this.onChildChanged} />
+            </div>;
+        }
+    });
+
+    var ToggleButton = React.createClass({
+        getInitialState: function() {
+            return { checked: this.props.initialChecked };
+        },
+        onTextChanged: function() {
+            var newState = !this.state.checked;
+            this.setState({ checked: newState });
+            this.props.callbackParent(newState); // hey parent, I've changed!
+        },
+        render: function() {
+            return <label>{this.props.text}: <input type="checkbox" checked={this.state.checked} onChange={this.onTextChanged}/></label>;
+        }
+    });
+    React.render(<MyContainer />, document.body);
+>>>>>>> 5f5c680ccfdb5bd39de7cd70014919a425b91e15
 </script>
 </body>
 </html>
