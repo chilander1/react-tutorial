@@ -20,6 +20,11 @@ module.exports = {
                 exclude: [/node_modules/, /public/]
             },
             {
+                test: /\.less$/,
+                loader: "style-loader!css-loader!autoprefixer-loader!less",
+                exclude: [/node_modules/, /public/]
+            },
+            {
                 test: /\.gif$/,
                 loader: "url-loader?limit=10000&mimetype=image/gif"
             },
