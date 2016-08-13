@@ -21462,7 +21462,7 @@
 /* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
 	'use strict';
 
@@ -21527,13 +21527,13 @@
 
 	module.exports = NotesApp;
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "NotesApp.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "NotesApp.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
 	'use strict';
 
@@ -21544,14 +21544,10 @@
 	var NoteEditor = React.createClass({
 	    displayName: 'NoteEditor',
 
-	    contextTypes: {
-	        color: React.PropTypes.string
-	    },
 	    getInitialState: function getInitialState() {
 	        return {
 	            text: '',
-	            selectedOption: '#FF8A80',
-	            color1: this.context.color
+	            selectedOption: '#FF8A80'
 	        };
 	    },
 
@@ -21561,24 +21557,23 @@
 	    onChildChanged: function onChildChanged(newState) {
 	        // if newState is true, it means a checkbox has been checked.
 	        this.setState({ selectedOption: newState });
+
+	        console.log(newState);
 	    },
 	    handleNoteAdd: function handleNoteAdd() {
 	        var newNote = {
 	            text: this.state.text,
-	            color: this.state.color1,
+	            color: this.state.selectedOption,
 	            id: Date.now()
 	        };
-	        console.log(this.props.children);
-	        console.log(this.props);
-	        console.log(this.context);
-	        console.log(this.state.color1);
+	        console.log(NoteColor['this']);
+
 	        this.props.onNoteAdd(newNote);
 	        this.setState({ text: '' });
 	    },
 
 	    render: function render() {
-
-	        return console.log(this.context.color), React.createElement(
+	        return React.createElement(
 	            'div',
 	            { className: 'note-editor' },
 	            React.createElement('textarea', {
@@ -21588,10 +21583,10 @@
 	                value: this.state.text,
 	                onChange: this.handleTextChange
 	            }),
-	            React.createElement(NoteColor, { onChange: this.onChildChanged }),
+	            React.createElement(NoteColor, { callbackParent: this.onChildChanged }),
 	            React.createElement(
 	                'button',
-	                { className: 'add-button', onClick: this.handleNoteAdd },
+	                { className: 'add-button', onClick: this.handleNoteAdd, callbackParent: this.onChildChanged },
 	                'Add'
 	            )
 	        );
@@ -21600,13 +21595,13 @@
 
 	module.exports = NoteEditor;
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "NoteEditor.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "NoteEditor.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
 	'use strict';
 
@@ -21616,9 +21611,6 @@
 	var NoteColor = React.createClass({
 	    displayName: 'NoteColor',
 
-	    childContextTypes: {
-	        color: React.PropTypes.string
-	    },
 	    getInitialState: function getInitialState() {
 	        return {
 	            selectedOption: '#FF8A80'
@@ -21629,27 +21621,17 @@
 	        this.setState({
 	            selectedOption: newState
 	        });
+	        this.props.callbackParent(newState);
+	    },
 
-	        // this.props.callbackParent(newState);
-	    },
-	    getChildContext: function getChildContext() {
-	        // console.log(this.state.selectedOption);
-	        return {
-	            color: this.state.selectedOption
-	        };
-	    },
-	    /*  componentDidUpdate: function (pr) {
-	          console.log(this.state.selectedOption);
-	    
-	      },*/
 	    render: function render(i, props) {
 	        return React.createElement(
 	            'div',
 	            { className: 'colorB' },
-	            React.createElement('input', { type: 'radio', value: 'red',
-	                checked: this.state.selectedOption === 'red', onChange: this.handleOptionChange }),
-	            React.createElement('input', { type: 'radio', value: 'blue',
-	                checked: this.state.selectedOption === 'blue', onChange: this.handleOptionChange }),
+	            React.createElement('input', { type: 'radio', value: '#FF8A80',
+	                checked: this.state.selectedOption === '#FF8A80', onChange: this.handleOptionChange }),
+	            React.createElement('input', { type: 'radio', value: '#FFD180',
+	                checked: this.state.selectedOption === '#FFD180', onChange: this.handleOptionChange }),
 	            React.createElement('input', { type: 'radio', value: '#FFFF8D',
 	                checked: this.state.selectedOption === '#FFFF8D', onChange: this.handleOptionChange }),
 	            React.createElement('input', { type: 'radio', value: '#CFD8DC',
@@ -21666,7 +21648,7 @@
 
 	module.exports = NoteColor;
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "NotesColor.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "NotesColor.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 178 */
@@ -21703,7 +21685,7 @@
 
 
 	// module
-	exports.push([module.id, ".note-editor {\n    width: 100%;\n    max-width: 600px;\n    padding: 16px;\n    margin: 16px auto;\n    background-color: white;\n    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n    border-radius: 2px;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n}\n\n.textarea {\n    width: 100%;\n    resize: none;\n    margin: 5px;\n    font-size: 14px;\n    border: none;\n    font-weight: 300;\n}\n\n.textarea:focus {\n    outline: 0;\n}\n\n.add-button {\n    -ms-flex-item-align: end;\n        align-self: flex-end;\n    width: 100px;\n    background-color:#44c767;\n    border-radius:28px;\n    border:1px solid #18ab29;\n    cursor:pointer;\n    color:#ffffff;\n    font-size:14px;\n    padding:8px 8px;\n    text-transform: uppercase;\n    text-decoration:none;\n    text-shadow:0px 1px 0px #2f6627;\n}\n\n.add-button:hover {\n    background-color:#5cbf2a;\n}\n\n.add-button:active {\n    position:relative;\n    top:1px;\n}\n\n.add-button:focus {\n    outline: 0;\n}\n", ""]);
+	exports.push([module.id, ".note-editor {\r\n    width: 100%;\r\n    max-width: 600px;\r\n    padding: 16px;\r\n    margin: 16px auto;\r\n    background-color: white;\r\n    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\r\n    border-radius: 2px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n}\r\n\r\n.textarea {\r\n    width: 100%;\r\n    resize: none;\r\n    margin: 5px;\r\n    font-size: 14px;\r\n    border: none;\r\n    font-weight: 300;\r\n}\r\n\r\n.textarea:focus {\r\n    outline: 0;\r\n}\r\n\r\n.add-button {\r\n    -ms-flex-item-align: end;\r\n        align-self: flex-end;\r\n    width: 100px;\r\n    background-color:#44c767;\r\n    border-radius:28px;\r\n    border:1px solid #18ab29;\r\n    cursor:pointer;\r\n    color:#ffffff;\r\n    font-size:14px;\r\n    padding:8px 8px;\r\n    text-transform: uppercase;\r\n    text-decoration:none;\r\n    text-shadow:0px 1px 0px #2f6627;\r\n}\r\n\r\n.add-button:hover {\r\n    background-color:#5cbf2a;\r\n}\r\n\r\n.add-button:active {\r\n    position:relative;\r\n    top:1px;\r\n}\r\n\r\n.add-button:focus {\r\n    outline: 0;\r\n}\r\n", ""]);
 
 	// exports
 
@@ -22020,7 +22002,7 @@
 /* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
 	'use strict';
 
@@ -22070,13 +22052,13 @@
 
 	module.exports = NotesGrid;
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "NotesGrid.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "NotesGrid.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\node_modules\\react-hot-api\\modules\\index.js"), RootInstanceProvider = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
 	'use strict';
 
@@ -22104,7 +22086,7 @@
 
 	module.exports = Note;
 
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("C:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Note.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("c:\\OpenServer\\domains\\tutorials.loc\\example1\\node_modules\\react-hot-loader\\makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Note.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 184 */
@@ -22181,7 +22163,7 @@
 
 
 	// module
-	exports.push([module.id, ".notes-grid {\n    margin: 0 auto;\n}", ""]);
+	exports.push([module.id, ".notes-grid {\r\n    margin: 0 auto;\r\n}", ""]);
 
 	// exports
 
@@ -22221,7 +22203,7 @@
 
 
 	// module
-	exports.push([module.id, "* {\n    box-sizing: border-box;\n}\n\nbody {\n    font-family: sans-serif;\n    font-weight: 300;\n    background-color: #eaeaea;\n}\n\n#mount-point {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n\n.notes-app {\n    max-width: 960px;\n    width: 100%;\n}\n\n.app-header {\n    text-align: center;\n    font-weight: 500;\n    color: grey;\n    text-shadow: 0px 2px 3px rgba(255,255,255,0.5);\n}", ""]);
+	exports.push([module.id, "* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: sans-serif;\r\n    font-weight: 300;\r\n    background-color: #eaeaea;\r\n}\r\n\r\n#mount-point {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.notes-app {\r\n    max-width: 960px;\r\n    width: 100%;\r\n}\r\n\r\n.app-header {\r\n    text-align: center;\r\n    font-weight: 500;\r\n    color: grey;\r\n    text-shadow: 0px 2px 3px rgba(255,255,255,0.5);\r\n}", ""]);
 
 	// exports
 

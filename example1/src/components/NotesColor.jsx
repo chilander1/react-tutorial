@@ -2,9 +2,6 @@ var React = require('react');
 // require('./NoteColor.css');
 
 var NoteColor = React.createClass({
-    childContextTypes:{
-        color: React.PropTypes.string
-    },
     getInitialState: function () {
         return {
             selectedOption: '#FF8A80'
@@ -15,27 +12,16 @@ var NoteColor = React.createClass({
         this.setState({
             selectedOption: newState,
         });
-
-        // this.props.callbackParent(newState);
+        this.props.callbackParent(newState);
     },
-    getChildContext(){
-        // console.log(this.state.selectedOption);
-        return {
-            color: this.state.selectedOption
-        }
-    },
-  /*  componentDidUpdate: function (pr) {
-        console.log(this.state.selectedOption);
 
-
-    },*/
     render: function (i, props) {
         return (
             <div className="colorB">
-                <input type="radio" value="red"
-                       checked={this.state.selectedOption === 'red'} onChange={this.handleOptionChange}/>
-                <input type="radio" value="blue"
-                       checked={this.state.selectedOption === 'blue'} onChange={this.handleOptionChange}/>
+                <input type="radio" value="#FF8A80"
+                       checked={this.state.selectedOption === '#FF8A80'} onChange={this.handleOptionChange}/>
+                <input type="radio" value="#FFD180"
+                       checked={this.state.selectedOption === '#FFD180'} onChange={this.handleOptionChange}/>
                 <input type="radio" value="#FFFF8D"
                        checked={this.state.selectedOption === '#FFFF8D'} onChange={this.handleOptionChange}/>
                 <input type="radio" value="#CFD8DC"
