@@ -1,19 +1,21 @@
 {
-  "name": "example1",
+  "name": "my-project",
   "version": "1.0.0",
-  "description": "tutorial react",
+  "description": "This is demo project",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devserver": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 1337 --host localhost"
+    "devserver": "webpack-dev-server --debug --hot --devtool eval-source-map --output-pathinfo --watch --colors --inline --content-base public --port 8090 --host 0.0.0.0"
   },
-  "author": "chil",
+  "author": "Kateryna Porshnieva",
   "license": "ISC",
   "dependencies": {
+    "classnames": "^2.2.3",
     "jquery": "*",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
-    "react-router": "^2.6.0"
+    "less": "^2.6.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-router": "^2.0.0-rc6"
   },
   "devDependencies": {
     "autoprefixer-loader": "*",
@@ -22,6 +24,7 @@
     "css-loader": "^0.22.0",
     "file-loader": "^0.8.5",
     "json-loader": "^0.5.4",
+    "less-loader": "^2.2.2",
     "react-hot-loader": "^1.3.0",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.6",
