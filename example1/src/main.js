@@ -1,6 +1,6 @@
-var ReactDOM = require('react-dom');
-var React = require('react');
-var NotesApp = require('./components/NotesApp.jsx');
+const ReactDOM = require('react-dom');
+const React = require('react');
+const NotesApp = require('./components/NotesApp.jsx');
 
 ReactDOM.render(
     <NotesApp />,
