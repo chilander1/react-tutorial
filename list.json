@@ -1,0 +1,130 @@
+{
+  "company_list": [
+    {
+      "company_id": 27932,
+      "label": "Агропетролеум ТОВ",
+      "value": "Агропетролеум",
+      "car_list": [{
+        "car_object": "first 36594343 KB DAF",
+        "car_status": {
+          "status_bool": true,
+          "status_speed_time": "Рухається зі швидкістю 65км/год",
+          "status_ignition": true,
+          "status_voltage": [{
+            "voltage": 25.52,
+            "battery_charge": 25
+          }],
+          "signal_gps": 18
+        },
+        "date": "немає даних 2 міс, 2дн, 2год ",
+        "longitude": -64.404945,
+        "latitude": -32.202924
+      },
+        {
+          "car_object": "first 3659 KB ertertert",
+          "car_status": {
+            "status_bool": true,
+            "status_speed_time": "Рухається зі швидкістю 65км/год",
+            "status_ignition": true,
+            "status_voltage": [{
+              "voltage": 25.52,
+              "battery_charge": 25
+            }],
+            "signal_gps": 18
+          },
+          "date": "немає даних 2 міс, 2дн, 2год ",
+          "longitude": 17.470493,
+          "latitude": 47.867077
+        },
+        {
+          "car_object": "AA 556 KB 456456",
+          "car_status": {
+            "status_bool": true,
+            "status_speed_time": "Рухається зі швидкістю 656км/год",
+            "status_ignition": true,
+            "status_voltage": [{
+              "voltage": 25.52,
+              "battery_charge": 25
+            }],
+            "signal_gps": 18
+          },
+          "date": "немає даних 2 міс, 2дн, 2год ",
+          "longitude": 145.141754,
+          "latitude": -37.766372
+        },
+        {
+          "car_object": "AA 3659 KB DA4566666F",
+          "car_status": {
+            "status_bool": true,
+            "status_speed_time": "Рухається зі швидкістю 65км/год",
+            "status_ignition": true,
+            "status_voltage": [{
+              "voltage": 25.52,
+              "battery_charge": 25
+            }],
+            "signal_gps": 18
+          },
+          "date": "немає даних 2 міс, 2дн, 2год ",
+          "longitude": 30.785408,
+          "latitude": 46.639301
+        }]
+    },
+    {
+      "company_id": 522084,
+      "label": "ТОВ fghgh",
+      "value": "ТОВ",
+      "car_list": [{
+        "car_object": "second 3659 KB DAF",
+        "car_status": {
+          "status_bool": true,
+          "status_speed_time": "Рухається зі швидкістю 15км/год",
+          "status_ignition": true,
+          "status_voltage": [{
+            "voltage": 29.52,
+            "battery_charge": 21
+          }],
+          "signal_gps": 20
+        },
+        "date": "немає даних 2 міс, 2дн, 2год "
+      }]
+    },
+    {
+      "company_id": 1578881,
+      "label": "Агроп vccv",
+      "value": "ТОВ2",
+      "car_list": [{
+        "car_object": "ВС 3455 KB DAF",
+        "car_status": {
+          "status_bool": true,
+          "status_speed_time": "Рухається зі швидкістю 5км/год",
+          "status_ignition": true,
+          "status_voltage": [{
+            "voltage": 25.52,
+            "battery_charge": 25
+          }],
+          "signal_gps": 18
+        },
+        "date": "немає даних 8 міс, 2дн, 2год "
+      }]
+    },
+    {
+      "company_id": 97671,
+      "label": "ТОВ нгш567о",
+      "value": "ТОВ3",
+      "car_list": [{
+        "car_object": "AA 3659 KB DAF",
+        "car_status": {
+          "status_bool": true,
+          "status_speed_time": "Рухається зі швидкістю 65км/год",
+          "status_ignition": true,
+          "status_voltage": [{
+            "voltage": 25.52,
+            "battery_charge": 32
+          }],
+          "signal_gps": 12
+        },
+        "date": "немає даних 2 міс, 8дн, 2год "
+      }]
+    }
+  ]
+}
